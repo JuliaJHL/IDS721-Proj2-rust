@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Dog Breeds recommendation</title>
+</head>
+
+<body style="text-align: center">
+    <h1>Welcome to the dog recommendation service!</h1>
+    <h2>Select features below to get a recommendation</h2>
+    <form action="/recommend" method="post">
+        <label>Country of origin</label>
+        <select id="country" name="country" required="required">
+            <option>-country of origin-</option>
+            <option>Africa</option>
+            <option>Australia</option>
+            <option>Belgium</option>
+            <option>Canada</option>
+            <option>China</option>
+            <option>Congo</option>
+            <option>England</option>
+            <option>Finland</option>
+            <option>France</option>
+            <option>Germany</option>
+            <option>Hungary</option>
+            <option>Ireland</option>
+            <option>Italy</option>
+            <option>Japan</option>
+            <option>Madagascar</option>
+            <option>Malta</option>
+            <option>Mexico</option>
+            <option>Middle East</option>
+            <option>Netherlands</option>
+            <option>Rhodesia</option>
+            <option>Russia</option>
+            <option>Scotland</option>
+            <option>Switzerland</option>
+            <option>Turkey</option>
+            <option>United States</option>
+            <option>Wales</option>
+        </select>
+        <br><br>
+
+        <label>Fur color</label>
+        <select id="fur_color" name="fur_color" required="required">
+            <option>-fur color-</option>
+                <option>Apricot</option>
+                <option>Black</option>
+                <option>Black & Tan</option>
+                <option>Black & White</option>
+                <option>Blenheim</option>
+                <option>Blue</option>
+                <option>Blue Merle</option>
+                <option>Brindle</option>
+                <option>Brown</option>
+                <option>Chocolate</option>
+                <option>Cream</option>
+                <option>Fawn</option>
+                <option>Golden</option>
+                <option>Grey</option>
+                <option>Harlequin</option>
+                <option>Lemon</option>
+                <option>Liver</option>
+                <option>Mahogany</option>
+                <option>Merle</option>
+                <option>Orange</option>
+                <option>Pink</option>
+                <option>Red</option>
+                <option>Sable</option>
+                <option>Salt & Pepper</option>
+                <option>Sesame</option>
+                <option>Silver</option>
+                <option>Tan</option>
+                <option>Wheaten</option>
+                <option>White</option>
+                <option>Yellow</option>
+        </select>
+        <br><br>
+
+        <label>Height (in)</label>
+        <input type="number" name="height" placeholder="height (in)" required="required">
+        <br><br>
+
+        <label>character_traits</label>
+        <select id="character_traits" name="character_traits" required="required">
+            <option>-character_traits-</option>
+            <option>affectionate</option>
+            <option>athletic</option>
+            <option>brave</option>
+            <option>calm</option>
+            <option>charming</option>
+            <option>confident</option>
+            <option>curious</option>
+            <option>energetic</option>
+            <option>friendly</option>
+            <option>gentle</option>
+            <option>good-natured</option>
+            <option>hypoallergenic</option>
+            <option>independent</option>
+            <option>intelligent</option>
+            <option>loyal</option>
+            <option>patient</option>
+            <option>playful</option>
+            <option>protective</option>
+            <option>sensitive</option>
+            <option>social</option>
+            <option>strong</option>
+            <option>trainable</option>
+        </select>
+        <br><br>
+
+        <br><br>
+        <button type="submit">Submit</button>
+        <br><br>
+    </form>
+
+</body>
+</html>
+
+
+
