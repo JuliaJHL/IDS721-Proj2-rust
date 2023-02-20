@@ -22,7 +22,7 @@ async fn recommend(form: web::Form<RecommendationForm>) -> impl Responder {
     let dogs = read_csv("data/dog_breeds.csv").unwrap();
     let recommended_dogs = recommend_dog(dogs, &form.country, &form.fur_color, form.height, &form.character_traits);
     let output = print_recommended_dogs(recommended_dogs);
-    // render index.html with recommended dogs
+    // render recommend.html with recommended dogs
     let mut context = Context::new();
     context.insert("dogs", &output);
     let rendered = tera.render("recommend.html", &context).unwrap();

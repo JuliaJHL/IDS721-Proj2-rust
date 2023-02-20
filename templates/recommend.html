@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html >
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <title>Recommended result</title>
-</head>
-
-<body style="text-align: center">
-    <h1>Recommended result</h1>
-    <h2>Based on your selection, we recommend the following dog breeds:</h2>
+    <title>Recommended Result</title>
+    <style>
+      /* Add some padding to the container */
+      .container {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="text-align: center">Recommended Result</h1>
+      <h2 style="text-align: center">Based on your selection, we recommend the following dog breeds:</h2>
       
-    {% for dog in dogs %} 
-        {{ dog }}
-        <br>
-        <br>
-    {% endfor %}
-    
-    <h2>Click <a href="/">here</a> to go back to the main page</h2>
-</body>
+      <div style="display: flex; justify-content: center;">
+        <div style="text-align: left; max-width: 800px;">
+          {% for dog in dogs %}
+            <pre>{{ dog }}</pre>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <h2 style="text-align: center; margin-top: 40px">Click <a href="/">here</a> to go back to the main page</h2>
+    </div>
+  </body>
 </html>

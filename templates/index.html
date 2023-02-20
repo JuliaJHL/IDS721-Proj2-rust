@@ -3,11 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Dog Breeds recommendation</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        form {
+            display: inline-block;
+            text-align: center;
+            border: 2px solid #84b9ce;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        select, input {
+            display: block;
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
-<body style="text-align: center">
+
+<body>
     <h1>Welcome to the dog recommendation service!</h1>
     <h2>Select features below to get a recommendation</h2>
+    <br> <br>
     <form action="/recommend" method="post">
         <label>Country of origin</label>
         <select id="country" name="country" required="required">
@@ -39,7 +80,6 @@
             <option>United States</option>
             <option>Wales</option>
         </select>
-        <br><br>
 
         <label>Fur color</label>
         <select id="fur_color" name="fur_color" required="required">
@@ -75,11 +115,9 @@
                 <option>White</option>
                 <option>Yellow</option>
         </select>
-        <br><br>
 
         <label>Height (in)</label>
         <input type="number" name="height" placeholder="height (in)" required="required">
-        <br><br>
 
         <label>character_traits</label>
         <select id="character_traits" name="character_traits" required="required">
@@ -107,9 +145,7 @@
             <option>strong</option>
             <option>trainable</option>
         </select>
-        <br><br>
-
-        <br><br>
+        <br>
         <button type="submit">Submit</button>
         <br><br>
     </form>
