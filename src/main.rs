@@ -20,7 +20,7 @@ async fn recommend(form: web::Form<RecommendationForm>) -> impl Responder {
     let form = form.into_inner();
     // recommend dogs based on features
     let dogs = read_csv("data/dog_breeds.csv").unwrap();
-    let recommended_dogs = recommend_dog(dogs, &form.country, &form.fur_color, form.height, &form.character_traits);
+    let recommended_dogs = recommend_dogs(dogs, form.country, form.fur_color, form.height, form.character_traits);
     let output = print_recommended_dogs(recommended_dogs);
     // render recommend.html with recommended dogs
     let mut context = Context::new();
@@ -34,7 +34,7 @@ async fn recommend(form: web::Form<RecommendationForm>) -> impl Responder {
 struct RecommendationForm {
     country: String,
     fur_color: String,
-    height: u32,
+    height: String,
     character_traits: String,
 }
 

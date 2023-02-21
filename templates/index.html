@@ -20,7 +20,7 @@
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
-            text-align: center;
+            text-align: left;
         }
 
         select, input {
@@ -50,7 +50,7 @@
     <h2>Select features below to get a recommendation</h2>
     <br> <br>
     <form action="/recommend" method="post">
-        <label>Country of origin</label>
+        <label>Country of origin (optional)</label>
         <select id="country" name="country" required="required">
             <option>-country of origin-</option>
             <option>Africa</option>
@@ -81,45 +81,54 @@
             <option>Wales</option>
         </select>
 
-        <label>Fur color</label>
+        <label>Fur color (optional)</label>
         <select id="fur_color" name="fur_color" required="required">
             <option>-fur color-</option>
-                <option>Apricot</option>
-                <option>Black</option>
-                <option>Black & Tan</option>
-                <option>Black & White</option>
-                <option>Blenheim</option>
-                <option>Blue</option>
-                <option>Blue Merle</option>
-                <option>Brindle</option>
-                <option>Brown</option>
-                <option>Chocolate</option>
-                <option>Cream</option>
-                <option>Fawn</option>
-                <option>Golden</option>
-                <option>Grey</option>
-                <option>Harlequin</option>
-                <option>Lemon</option>
-                <option>Liver</option>
-                <option>Mahogany</option>
-                <option>Merle</option>
-                <option>Orange</option>
-                <option>Pink</option>
-                <option>Red</option>
-                <option>Sable</option>
-                <option>Salt & Pepper</option>
-                <option>Sesame</option>
-                <option>Silver</option>
-                <option>Tan</option>
-                <option>Wheaten</option>
-                <option>White</option>
-                <option>Yellow</option>
+            <option>Apricot</option>
+            <option>Black</option>
+            <option>Black & Tan</option>
+            <option>Black & White</option>
+            <option>Blenheim</option>
+            <option>Blue</option>
+            <option>Blue Merle</option>
+            <option>Brindle</option>
+            <option>Brown</option>
+            <option>Chocolate</option>
+            <option>Cream</option>
+            <option>Fawn</option>
+            <option>Golden</option>
+            <option>Grey</option>
+            <option>Harlequin</option>
+            <option>Lemon</option>
+            <option>Liver</option>
+            <option>Mahogany</option>
+            <option>Merle</option>
+            <option>Orange</option>
+            <option>Pink</option>
+            <option>Red</option>
+            <option>Sable</option>
+            <option>Salt & Pepper</option>
+            <option>Sesame</option>
+            <option>Silver</option>
+            <option>Tan</option>
+            <option>Wheaten</option>
+            <option>White</option>
+            <option>Yellow</option>
         </select>
 
-        <label>Height (in)</label>
-        <input type="number" name="height" placeholder="height (in)" required="required">
+        <label>Height (in) (optional)</label>
+        <select id="height" name="height" required="required">
+            <option>-height-</option>
+            <option>5-10</option>
+            <option>11-15</option>
+            <option>16-20</option>
+            <option>21-25</option>
+            <option>26-30</option>
+            <option>31-35</option>
+        </select>
 
-        <label>character_traits</label>
+
+        <label>character_traits (optional)</label>
         <select id="character_traits" name="character_traits" required="required">
             <option>-character_traits-</option>
             <option>affectionate</option>

@@ -74,11 +74,11 @@ where
         let record = result?;
         let breed = record[0].to_string();
         let country = record[1].to_string();
-        let fur_color = record[2].split(',').map(|s| s.to_string()).collect();
+        let fur_color = record[2].split(',').map(|s| s.trim().to_string()).collect();
         let height = parse_range(&record[3]);
         let longevity = parse_range(&record[5]);
-        let character_traits = record[6].split(',').map(|s| s.to_string()).collect();
-        let health_issues = record[7].split(',').map(|s| s.to_string()).collect();
+        let character_traits = record[6].split(',').map(|s| s.trim().to_string()).collect();
+        let health_issues = record[7].split(',').map(|s| s.trim().to_string()).collect();
 
         dogs.push(Dog::new(breed, country, fur_color, height, longevity, character_traits, health_issues));
     }
@@ -89,38 +89,35 @@ where
 /*
 recommend dog
 */
-// write a function that takes featuers as input and return vec of dogs
+// recommand dogs based on the features
 // the features are: country, fur_color, height, longevity, character_traits
-// the function should return a vec of dogs that match at least three of the features
-pub fn recommend_dog(dogs: Vec<Dog>, country: &str, fur_color: &str, height: u32, character_traits: &str) -> Vec<Dog> {
+// return a vector of recommended dogs which satisfy all the non-None features
+pub fn recommend_dogs(dogs: Vec<Dog>, country: String, fur_color: String, height: String, character_traits: String) -> Vec<Dog> {
     let mut recommended_dogs = Vec::new();
 
     for dog in dogs {
-        let mut match_count = 0;
-
-        if dog.country == country {
-            match_count += 1;
+        if country!="-country of origin-" && dog.country != country {
+            continue;
+        }
+        if fur_color!="-fur color-" && !dog.fur_color.contains(&fur_color) {
+            continue;
+        }
+        if height!="-height-" {
+            let height = parse_range(&height);
+            if dog.height.start >= height.end || dog.height.end <= height.start {
+                continue;
+            }
+        }
+        if character_traits!="-character_traits-" && !dog.character_traits.contains(&character_traits) {
+            continue;
         }
 
-        if dog.fur_color.contains(&fur_color.to_string()) {
-            match_count += 1;
-        }
-
-        if dog.height.contains(&height) {
-            match_count += 1;
-        }
-
-        if dog.character_traits.contains(&character_traits.to_string()) {
-            match_count += 1;
-        }
-
-        if match_count >= 3 {
-            recommended_dogs.push(dog);
-        }
+        recommended_dogs.push(dog);
     }
 
     recommended_dogs
 }
+
 
 // print the recommended dogs information
 pub fn print_recommended_dogs(recommended_dogs: Vec<Dog>) -> Vec<String> {
