@@ -7,7 +7,7 @@ In this project, I built a fucntinal web microservice called Dog Recommendation.
 
 ## Dataset and Model
 * I used the `Dog breeds` dataset, which contains a total of 7 features, which are country of origin, fur color, height, eye color, longevity, character traits, and common health problems.
-* For dog breed recommendations, users only need to select the country of origin, fur color, height, and character traits. When a breed of dog matches more than or equal to 3 characteristics, the dog will be added to the recommendation list. When there are more than 10 dog breeds to recommend, 10 breeds will be randomly selected from the recommendation list as the final recommendation result.
+* For dog breed recommendations, there are four features to choose from, which are country of origin, fur color, height, and character traits. Each feature is optional, and the user can select only the features of interest, such as only selecting fur color and height. When a breed of dog matches selected features, the dog will be added to the recommendation list. When there are more than 10 dog breeds to recommend, 10 breeds will be randomly selected from the recommendation list as the final recommendation result.
 
 ## Run Project Locally
 1. Clone the repo and cd into it:
@@ -27,7 +27,7 @@ cargo run
 ## Examples
 When you run the project locally, you will enter this page.
 ![login](https://github.com/JuliaJHL/imgs_readme/blob/main/ids721proj2/login.png)
-You can select or enter the features.
+You can select the features of interest. Here, I only select 'China' as 'Country of origin' and '11-15 in' as 'Height'.
 ![input](https://github.com/JuliaJHL/imgs_readme/blob/main/ids721proj2/input.png)
 Then click the `submit` button, you will get the recommended results.
 ![result](https://github.com/JuliaJHL/imgs_readme/blob/main/ids721proj2/result.png)
