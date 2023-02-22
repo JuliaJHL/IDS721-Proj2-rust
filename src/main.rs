@@ -1,7 +1,6 @@
-use dog_recommendations::*;
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
+use dog_recommendations::*;
 use tera::{Context, Tera};
-
 
 /*
 apply in web browser
@@ -20,7 +19,13 @@ async fn recommend(form: web::Form<RecommendationForm>) -> impl Responder {
     let form = form.into_inner();
     // recommend dogs based on features
     let dogs = read_csv("data/dog_breeds.csv").unwrap();
-    let recommended_dogs = recommend_dogs(dogs, form.country, form.fur_color, form.height, form.character_traits);
+    let recommended_dogs = recommend_dogs(
+        dogs,
+        form.country,
+        form.fur_color,
+        form.height,
+        form.character_traits,
+    );
     let output = print_recommended_dogs(recommended_dogs);
     // render recommend.html with recommended dogs
     let mut context = Context::new();
@@ -29,7 +34,6 @@ async fn recommend(form: web::Form<RecommendationForm>) -> impl Responder {
     HttpResponse::Ok().body(rendered)
 }
 
-
 #[derive(serde::Deserialize)]
 struct RecommendationForm {
     country: String,
@@ -37,8 +41,6 @@ struct RecommendationForm {
     height: String,
     character_traits: String,
 }
-
-
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -52,10 +54,7 @@ async fn main() -> std::io::Result<()> {
     .bind("127.0.0.1:8080")?
     .run()
     .await
-
 }
-
-
 
 /*
 apply in terminal
@@ -89,5 +88,3 @@ apply in terminal
 //     let output = print_recommended_dogs(recommended_dogs);
 //     println!("{}", output);
 // }
-
-
