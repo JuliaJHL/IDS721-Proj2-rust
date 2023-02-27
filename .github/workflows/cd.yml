@@ -29,4 +29,4 @@ jobs:
         # Build a docker container and push it to ECR
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         echo "Pushing image to ECR..."
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG折叠具有上下文菜单撰写段落
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
