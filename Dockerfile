@@ -11,3 +11,4 @@ RUN cargo install --path .
 RUN cargo build -j 16
 EXPOSE 8080
 CMD ["cargo", "run"]
+COPY templates/ templates/
